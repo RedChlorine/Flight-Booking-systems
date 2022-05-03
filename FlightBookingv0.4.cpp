@@ -34,37 +34,37 @@ void T_Valid()
 }
 
 ////FUNCTION TO DISPLAY SEATS////
-void Seat_Maker()
+void SeatMaker()
 {
-////ARRAY FOR SEATING STRUCTURE////
-    string const first_class[4][7] = {{"|A1","|A2","|A3","|---","|A4","|A5","|A6|\n"},{"|B1","|B2","|B3|","---","|B4","|B5","|B6|\n"},{"|C1","|C2","|C3|","---","|C4","|C5","|C6|\n"},{"|D1","|D2","|D3|","---","|D4","|D5","|D6|\n"}};
-    string const economy_class[4][7] = {{"|E1","|E2","|E3","|---","|E4","|E5","|E6|\n"},{"|F1","|F2","|F3|","---","|F4","|F5","|F6|\n"},{"|G1","|G2","|G3|","---","|G4","|G5","|G6|\n"},{"|H1","|H2","|H3|","---","|H4","|H5","|H6|\n"}};
-    string const last_row[2] = {"|I1", "|I2|\n"};
+/*ARRAY FOR SEATING STRUCTURE; THERE ARE 15 POSITIONS PER K'TH ELEMENT & 4 POSITIONS PER J'TH ELEMENT*/
+    string const first_class[4][15] = {{"|","A1","|","A2","|","A3","|","---","|","A4","|","A5","|","A6|","\n"},{"|","B1","|","B2","|","B3","|","---","|","B4","|","B5","|","B6|","\n"},{"|","C1","|","C2","|","C3","|","---","|","C4","|","C5","|","C6|","\n"},{"|","D1","|","D2","|","D3","|","---","|","D4","|","D5","|","D6|","\n"}};
+    string const economy_class[4][15] = {{"|","E1","|","E2","|","E3","|","---","|","E4","|","E5","|","E6|","\n"},{"|","F1","|","F2","|","F3","|","---","|","F4","|","F5","|","F6|","\n"},{"|","G1","|","G2","|","G3","|","---","|","G4","|","G5","|","G6|","\n"},{"|","H1","|","H2","|","H3","|","---","|","H4","|","H5","|","H6|","\n"}};
+    string const last_row[5] = {"|","I1","|","I2","|\n"};
 
-////CALCULATION OF SEAT PRICE////
+//CALCULATION OF SEAT PRICE//
     float const PRICE_ECONOMY = 1600.00;
     float const PRICE_FIRST_CLASS = PRICE_ECONOMY*0.2 + 1600.00;
 
-////Outputs to the console, the array containing the seat structure for first class////
-     cout << "First Class" << "(R" << PRICE_FIRST_CLASS << ")\n";
+//Outputs to the console, the array containing the seat structure for first class//
+    cout << "First Class" << "(R" << PRICE_FIRST_CLASS << ")\n";
     for(int j = 0; j<4 ; j++)
     {
-        for (int k = 0; k < 7; k++)
+        for (int k = 0; k < 15; k++)
         {
             cout << first_class[j][k];
         }
     }
-////OUTPUTS THE  ARRAY CONTAINING THE SEAT STRUCTURE FOR THE ECONOMY CLASS////
-    cout <<"\n Economy Class" << "(R" << PRICE_ECONOMY << ")\n";
+//OUTPUTS THE  ARRAY CONTAINING THE SEAT STRUCTURE FOR THE ECONOMY CLASS//
+    cout <<"\nEconomy Class" << "(R" << PRICE_ECONOMY << ")\n";
     for(int b = 0; b<4; b++)
     {
-        for(int c = 0; c<7; c++)
+        for(int c = 0; c<15; c++)
         {
             cout << economy_class[b][c];
         }
     }
-////OUTPUTS THE ARRAY CONTAINING THE SEAT STRUCTURE OF THE LAST ROW OF ECONOMY CLASS////
-    for(int a = 0; a <2; a++)
+//OUTPUTS THE ARRAY CONTAINING THE SEAT STRUCTURE OF THE LAST ROW OF ECONOMY CLASS//
+    for(int a = 0; a <5; a++)
     {
         cout << last_row[a];
     }
