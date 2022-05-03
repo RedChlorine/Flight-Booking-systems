@@ -1,0 +1,3 @@
+C:/Users/vinch/CLionProjects/FlightBook v0.6.cpp/cmake-build-debug/CMakeFiles/FlightBook_v0_6_cpp.dir
+C:/Users/vinch/CLionProjects/FlightBook v0.6.cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/vinch/CLionProjects/FlightBook v0.6.cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
