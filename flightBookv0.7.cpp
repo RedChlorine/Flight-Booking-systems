@@ -37,14 +37,13 @@ void T_Valid() {
     } while (t_valid != true);
 }
 
-
 //FUNCTION TO DISPLAY SEATS//
 void SeatMaker()
 {
 /*ARRAY FOR SEATING STRUCTURE; THERE ARE 15 POSITIONS PER K'TH ELEMENT & 4 POSITIONS PER J'TH ELEMENT*/
-    string const first_class[4][15] = {{"|","A1","|","A2","|","A3","|","---","|","A4","|","A5","|","A6|","\n"},{"|","B1","|","B2","|","B3","|","---","|","B4","|","B5","|","B6|","\n"},{"|","C1","|","C2","|","C3","|","---","|","C4","|","C5","|","C6|","\n"},{"|","D1","|","D2","|","D3","|","---","|","D4","|","D5","|","D6|","\n"}};
-    string const economy_class[4][15] = {{"|","E1","|","E2","|","E3","|","---","|","E4","|","E5","|","E6|","\n"},{"|","F1","|","F2","|","F3","|","---","|","F4","|","F5","|","F6|","\n"},{"|","G1","|","G2","|","G3","|","---","|","G4","|","G5","|","G6|","\n"},{"|","H1","|","H2","|","H3","|","---","|","H4","|","H5","|","H6|","\n"}};
-    string const last_row[5] = {"|","I1","|","I2","|\n"};
+    string first_class[4][15] = {{"|","A1","|","A2","|","A3","|","---","|","A4","|","A5","|","A6|","\n"},{"|","B1","|","B2","|","B3","|","---","|","B4","|","B5","|","B6|","\n"},{"|","C1","|","C2","|","C3","|","---","|","C4","|","C5","|","C6|","\n"},{"|","D1","|","D2","|","D3","|","---","|","D4","|","D5","|","D6|","\n"}};
+    string economy_class[4][15] = {{"|","E1","|","E2","|","E3","|","---","|","E4","|","E5","|","E6|","\n"},{"|","F1","|","F2","|","F3","|","---","|","F4","|","F5","|","F6|","\n"},{"|","G1","|","G2","|","G3","|","---","|","G4","|","G5","|","G6|","\n"},{"|","H1","|","H2","|","H3","|","---","|","H4","|","H5","|","H6|","\n"}};
+    string last_row[5] = {"|","I1","|","I2","|\n"};
 
 //CALCULATION OF SEAT PRICE//
     float const PRICE_ECONOMY = 1600.00;
@@ -73,7 +72,70 @@ void SeatMaker()
     {
         cout << last_row[a];
     }
+
+//CUSTOMER SEAT SELECTION AND ALTERATION OF THE SEATING ARRAY//
+    char seat_row = 'Z';
+    int seat_column = 0;
+
+    cout << "\nPlease make a row selection ~ e.g. A: ";
+    cin >> seat_row;
+    seat_row = toupper(seat_row);
+
+    cout << "\nNow Please select a column ~ e.g 2: ";
+    cin >> seat_column;
+
+    switch (seat_row)
+    {
+        case 'A': {
+            int seat_row = 1;
+            break;
+        }
+
+        case 'B': {
+            int seat_row = 2;
+            break;
+        }
+
+        case 'C':{
+            int seat_row = 3;
+            break;
+        }
+
+        case 'D': {
+            int seat_row = 4;
+            break;
+        }
+
+        case 'E':{
+            int seat_row = 1;
+            break;
+        }
+
+        case 'F':{
+            int seat_row = 2;
+            break;
+        }
+
+        case'G':{
+            int seat_row = 3;
+            break;
+        }
+
+        case 'H':{
+            int seat_row = 4;
+            break;
+        }
+
+        default:
+            cout << "\nInvalid input";
+            break;
+    }
+
+    first_class[seat_row][seat_column] = "**";
+
 }
+
+
 
 
 int main()
