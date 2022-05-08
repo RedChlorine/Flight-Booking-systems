@@ -76,7 +76,7 @@ void SeatMaker()
 //CUSTOMER SEAT SELECTION AND ALTERATION OF THE SEATING ARRAY//
     char seat_row = 'Z';
     int seat_column = 0;
-
+    int seat_row_converted = 0;
     cout << "\nPlease make a row selection ~ e.g. A: ";
     cin >> seat_row;
     seat_row = toupper(seat_row);
@@ -87,42 +87,42 @@ void SeatMaker()
     switch (seat_row)
     {
         case 'A': {
-            int seat_row = 1;
+            seat_row_converted = 0;
             break;
         }
 
         case 'B': {
-            int seat_row = 2;
+            seat_row_converted = 1;
             break;
         }
 
         case 'C':{
-            int seat_row = 3;
+            seat_row_converted = 2;
             break;
         }
 
         case 'D': {
-            int seat_row = 4;
+            seat_row_converted = 3;
             break;
         }
 
         case 'E':{
-            int seat_row = 1;
+            seat_row_converted = 0;
             break;
         }
 
         case 'F':{
-            int seat_row = 2;
+            seat_row_converted = 1;
             break;
         }
 
         case'G':{
-            int seat_row = 3;
+            seat_row_converted = 2;
             break;
         }
 
         case 'H':{
-            int seat_row = 4;
+            seat_row_converted = 3;
             break;
         }
 
@@ -131,7 +131,16 @@ void SeatMaker()
             break;
     }
 
-    first_class[seat_row][seat_column] = "**";
+    first_class[seat_row_converted][seat_column] = "**";
+    cout << "First Class" << "(R" << PRICE_FIRST_CLASS << ")\n";
+    for(int j = 0; j<4 ; j++)
+    {
+        for (int k = 0; k < 15; k++)
+        {
+            cout << first_class[j][k];
+        }
+    }
+
 
 }
 
