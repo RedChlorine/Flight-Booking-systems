@@ -77,6 +77,7 @@ void SeatMaker()
     char seat_row = 'Z';
     int seat_column = 0;
     int seat_row_converted = 0;
+
     cout << "\nPlease make a row selection ~ e.g. A: ";
     cin >> seat_row;
     seat_row = toupper(seat_row);
@@ -126,9 +127,46 @@ void SeatMaker()
             break;
         }
 
-        default:
+        default: {
             cout << "\nInvalid input";
             break;
+        }
+    }
+    switch (seat_column)
+    {
+        case 1:{
+            seat_column = 1;
+            break;
+        }
+
+        case 2:{
+            seat_column = 3;
+            break;
+        }
+
+        case 3:{
+            seat_column = 5;
+            break;
+        }
+
+        case 4:{
+            seat_column = 9;
+            break;
+        }
+
+        case 5:{
+            seat_column = 11;
+            break;
+        }
+
+        case 6:{
+            seat_column = 13;
+            break;
+        }
+
+        default:{
+            cout << "\nInvalid entry!";
+        }
     }
 
     first_class[seat_row_converted][seat_column] = "**";
