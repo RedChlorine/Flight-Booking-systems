@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vinch/CLionProjects/FlightBook v0.6.cpp
+# Install script for directory: C:/Users/vinch/Documents/GitHub/Flight-Booking-systems
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/vinch/CLionProjects/FlightBook v0.6.cpp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/vinch/Documents/GitHub/Flight-Booking-systems/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

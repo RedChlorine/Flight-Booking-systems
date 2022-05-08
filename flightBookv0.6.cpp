@@ -2,38 +2,43 @@
 #include <string>
 using namespace std;
 
-////VALIDATION of time slot FUNCTION ////
-void T_Valid()
-{
-////INITIALIZATION OF THE TIME SLOT ARRAY AND INPUT VARIABLE////
-    string const TRAVEL_TIMES[5][10] = {{"1.\t07:00", "\t09:30"},{"\n2.\t09:00", "\t11:30"},{"\n3.\t11:00", "\t13:30"},{"\n4.\t13:00", "\t15:30"},{"\n5.\t15:00", "\t17:30"}};
-    int time_Slot;
-////Displays the array that stored the departure times////
-    cout << "Available Departure times:\n";
-    cout << "\tArive\tDepart\n\n";
-////COUNTER THAT DISPLAYS THE ARRAY STORING THE DEPARTURE TIMES////
-    for(int x = 0;x < 5; x++)
+//VALIDATION of time slot FUNCTION //
+void T_Valid() {
+    bool t_valid = true;
+    do
     {
-        for(int y =0; y<10; y++)
-        {
-            cout << TRAVEL_TIMES[x][y];
+//INITIALIZATION OF THE TIME SLOT ARRAY AND INPUT VARIABLE//
+        string const TRAVEL_TIMES[5][10] = {{"1.\t07:00",   "\t09:30"},
+                                            {"\n2.\t09:00", "\t11:30"},
+                                            {"\n3.\t11:00", "\t13:30"},
+                                            {"\n4.\t13:00", "\t15:30"},
+                                            {"\n5.\t15:00", "\t17:30"}};
+        int time_Slot;
+//Displays the array that stored the departure times//
+        cout << "Available Departure times:\n";
+        cout << "\tArive\tDepart\n\n";
+//COUNTER THAT DISPLAYS THE ARRAY STORING THE DEPARTURE TIMES//
+        for (int x = 0; x < 5; x++) {
+            for (int y = 0; y < 10; y++) {
+                cout << TRAVEL_TIMES[x][y];
+            }
         }
-    }
-////PROMTS THE USER TO SELECT A TIME SLOT////
-    cout << "\nPlease select on of the available times(e.g. 3):";
-    cin >> time_Slot;
-////VALIDATES THE SELECTED TIME SLOT INPUT////
-    if (time_Slot > 0 && time_Slot <6)
-    {
-        cout << "Thank you for your selection!\n";
-    }
-    else
-    {
-        cout << "Invalid selection!\n";
-    }
+//PROMTS THE USER TO SELECT A TIME SLOT//
+        cout << "\nPlease select on of the available times(e.g. 3):";
+        cin >> time_Slot;
+//VALIDATES THE SELECTED TIME SLOT INPUT//
+        if (time_Slot > 0 && time_Slot < 6) {
+            cout << "Thank you for your selection!\n";
+            t_valid = true;
+        } else {
+            cout << "Invalid selection!\n";
+            t_valid = false;
+        }
+    } while (t_valid != true);
 }
 
-////FUNCTION TO DISPLAY SEATS////
+
+//FUNCTION TO DISPLAY SEATS//
 void SeatMaker()
 {
 /*ARRAY FOR SEATING STRUCTURE; THERE ARE 15 POSITIONS PER K'TH ELEMENT & 4 POSITIONS PER J'TH ELEMENT*/
@@ -73,20 +78,30 @@ void SeatMaker()
 
 int main()
 {
+    char booking_choice = 'O';
+    do
+    {
+        string fullname;    //initialising the string `fullname`//
+//Welcome message and stores the users fullname as a string//
 
-    string fullname;    //initialising the string `fullname`//
-////Welcome message and stores the users fullname as a string////
-    cout << "Welcome to COS1511 Flight Booking Systems\n";
-    cout << "Please enter your fullname:\n";
-    getline(cin, fullname);
-    cout << endl;
+        cout << "Welcome to COS1511 Flight Booking Systems\n";
+        cout << "Please enter your fullname:\n";
+        getline(cin, fullname);
+        cout << endl;
 
-////VALIDATION OF TIME SLOT////
-    T_Valid();
-    cout << endl;
-////DISPLAYS THE SEAT SELECTION////
-    SeatMaker();
-    cout << "\nPlease make a selection, e.g. 'E2':";
+//VALIDATION OF TIME SLOT//
+        T_Valid();
+        cout << endl;
+//DISPLAYS THE SEAT SELECTION//
+        SeatMaker();
+
+
+        cout << "\nWould you like to make another booking?(Y/N): ";
+        cin >> booking_choice;
+        booking_choice = toupper(booking_choice);
+    }
+    while(booking_choice != 'N');
+
 
     return 0;
 }
